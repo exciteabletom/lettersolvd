@@ -1,7 +1,6 @@
 import sqlite3
 
 
-
 def init_db():
     con = sqlite3.connect('words.sqlite')
     cur = con.cursor()
@@ -13,7 +12,7 @@ def init_db():
     """)
     con.commit()
 
-    with open("/usr/share/dict/american-english", "r") as f:
+    with open("./american-english", "r") as f:
         for line in f:
             word = line.strip().lower()
             if not word.isalpha():
