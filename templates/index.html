@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>NYT Letterboxed Solver</title>
+</head>
+<body>
+<h1>NYT Letterboxed Solver</h1>
+<form action="/" method="GET" name="puzzle">
+    <input name=a type="text" maxlength="3" value="{{ request_args.get("a", "") }}">
+    <input name=b type="text" maxlength="3" value="{{ request_args.get("b", "") }}">
+    <input name=c type="text" maxlength="3" value="{{ request_args.get("c", "") }}">
+    <input name=d type="text" maxlength="3" value="{{ request_args.get("d", "") }}">
+    <button type="submit">Submit</button>
+</form>
+<h2>Solution:</h2>
+<p>{{ solution }}</p>
+</body>
+</html>
