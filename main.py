@@ -1,7 +1,7 @@
 from dict_utils import get_valid_words
 
 
-def solve(box: list[list[str]]) -> list[str]:
+def solve(box):
     needed_letters = [letter for side in box for letter in side]
     current_letter: str = ""
     valid_words = get_valid_words(box)

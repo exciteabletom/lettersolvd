@@ -39,8 +39,8 @@ def init_db():
     con.close()
 
 
-def get_valid_words(box: list[list[str]]) -> list[str]:
-    illegal_letter_pairs: list[str] = []
+def get_valid_words(box):
+    illegal_letter_pairs = []
     all_letters = []
     for side in box:
         for letter in side:
@@ -66,7 +66,7 @@ def get_valid_words(box: list[list[str]]) -> list[str]:
     cur = con.cursor()
     cur.execute(query)
 
-    valid_words: list[str] = []
+    valid_words = []
     for word in cur.fetchall():
         if set(word[0]).issubset(all_letters):
             valid_words.append(word[0])
